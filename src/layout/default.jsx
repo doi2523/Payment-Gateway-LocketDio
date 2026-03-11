@@ -14,9 +14,7 @@ const DefaultLayout = ({ children }) => {
       </div>
 
       {/* Main Content */}
-      <main className="flex-1 bg-gray-50">
-        <div className="relative z-10">{children}</div>
-      </main>
+      <main className="flex-1 bg-gray-50">{children}</main>
 
       {/* <Footer /> */}
     </div>

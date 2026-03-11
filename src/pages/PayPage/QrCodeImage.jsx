@@ -1,18 +1,18 @@
 export default function VietQRImage({ qrcode }) {
   if (!qrcode) return null;
 
-  const { bank_info, info_order } = qrcode;
-  const { bin, accountNumber } = bank_info;
-  const { description, amount } = info_order;
+  const { bank_info, info_order, checkout_qr } = qrcode;
+  // const { bin, accountNumber } = bank_info;
+  // const { description, amount } = info_order;
 
-  const src = `https://api.vietqr.io/image/${bin}-${accountNumber}-vietqr_pro.jpg?addInfo=${encodeURIComponent(description)}&amount=${amount}`;
+  // const src = `https://api.vietqr.io/image/${bin}-${accountNumber}-vietqr_pro.jpg?addInfo=${encodeURIComponent(description)}&amount=${amount}`;
 
   return (
     <div className="flex flex-col items-center space-y-3">
       <div className="relative">
         <img
           className="w-80 h-80 sm:w-70 sm:h-70 object-contain rounded-xl shadow-md border border-gray-200"
-          src={src}
+          src={checkout_qr}
           alt="QR Code thanh toán"
           loading="lazy"
         />

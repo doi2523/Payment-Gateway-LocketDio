@@ -199,7 +199,7 @@ export default function PayPage() {
             <div>
               <p className="text-xs text-gray-500">Chủ tài khoản</p>
               <p className="text-sm font-semibold text-primary">
-                {plan.bank_info.accountName}
+                {plan.bank_info.account_name}
               </p>
             </div>
 
@@ -212,10 +212,10 @@ export default function PayPage() {
               };
               const value =
                 field === "accountNumber"
-                  ? plan.bank_info.accountNumber
+                  ? plan.bank_info.account_number
                   : field === "price"
                   ? `${plan.price.toLocaleString()} VND`
-                  : plan.info_order.description;
+                  : plan?.transfer_content;
 
               return (
                 <div key={field}>
@@ -316,14 +316,14 @@ export default function PayPage() {
           <div className="text-sm space-y-2">
             <div>
               <span className="font-medium">Mã đơn:</span>{" "}
-              {plan.info_order.orderCode}
+              {plan?.id}
             </div>
             <div>
               <span className="font-medium">Khách hàng:</span>{" "}
-              {plan.display_name}
+              {plan.user_info?.display_name}
             </div>
             <div>
-              <span className="font-medium">Email:</span> {plan.email}
+              <span className="font-medium">Email:</span> {plan.user_info?.email}
             </div>
             <div>
               <span className="font-medium">Gói:</span> {plan.plan_name} (

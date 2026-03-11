@@ -1,6 +1,7 @@
 // src/components/Mirage.jsx
-import { mirage } from "ldrs";
 import { useEffect, useState } from "react";
+import { Zoomies } from "ldrs/react";
+import "ldrs/react/Zoomies.css";
 
 const themeColors = {
   light: "black",
@@ -12,7 +13,6 @@ const themeColors = {
 };
 
 const Mirage = () => {
-  mirage.register();
   const [color, setColor] = useState(themeColors.light);
 
   useEffect(() => {
@@ -26,12 +26,23 @@ const Mirage = () => {
     updateColor();
 
     const observer = new MutationObserver(updateColor);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
 
     return () => observer.disconnect();
   }, []);
 
-  return <l-mirage size="90" speed="2.5" stroke={color}></l-mirage>;
+  return (
+    <Zoomies
+      size="80"
+      stroke="5"
+      bgOpacity="0.1"
+      speed="1.4"
+      color="currentColor"
+    />
+  );
 };
 
 export default Mirage;

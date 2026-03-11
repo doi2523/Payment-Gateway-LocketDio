@@ -9,8 +9,6 @@ export default function PoweredByPayOS() {
         </h2>
         <p className="text-lg text-gray-600">
           <span className="font-medium">Powered by </span>
-          <span className="text-blue-600 font-semibold">PayOS</span>
-          <span className="text-gray-400 font-medium mx-1">&</span>
           <span className="text-indigo-600 font-semibold">Dio</span>
         </p>
       </div>
