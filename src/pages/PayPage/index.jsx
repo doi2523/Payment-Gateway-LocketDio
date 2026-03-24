@@ -183,14 +183,14 @@ export default function PayPage() {
             {/* Ngân hàng */}
             <div className="flex items-center gap-2">
               <img
-                src="https://api.vietqr.io/img/MB.png"
+                src={plan.bank_info?.bank_logo}
                 alt="MB"
                 className="h-6"
               />
               <div>
                 <p className="text-xs text-gray-500">Ngân hàng</p>
                 <p className="text-sm font-medium">
-                  Ngân hàng TMCP Quân đội (MB Bank)
+                  {plan.bank_info?.bank_fullname}
                 </p>
               </div>
             </div>
@@ -199,7 +199,7 @@ export default function PayPage() {
             <div>
               <p className="text-xs text-gray-500">Chủ tài khoản</p>
               <p className="text-sm font-semibold text-primary">
-                {plan.bank_info.account_name}
+                {plan.bank_info?.account_name}
               </p>
             </div>
 
